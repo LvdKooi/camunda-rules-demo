@@ -15,7 +15,7 @@
       <output id="Output_1" name="Strategy" typeRef="string" biodi:width="192" />
       <rule id="DecisionRule_0n93ioy">
         <inputEntry id="UnaryTests_1tno755">
-          <text>"label_1"</text>
+          <text>"LABEL_1"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0c6jqrs">
           <text>false</text>
@@ -26,7 +26,7 @@
       </rule>
       <rule id="DecisionRule_01nw22s">
         <inputEntry id="UnaryTests_0xjl3cu">
-          <text>"label_1"</text>
+          <text>"LABEL_1"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0s5xnf9">
           <text>false</text>
@@ -37,7 +37,7 @@
       </rule>
       <rule id="DecisionRule_0sjsf54">
         <inputEntry id="UnaryTests_01jnk0s">
-          <text>"label_1"</text>
+          <text>"LABEL_1"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0nlmqtq">
           <text>false</text>
@@ -48,7 +48,7 @@
       </rule>
       <rule id="DecisionRule_0eg296q">
         <inputEntry id="UnaryTests_0btxelb">
-          <text>"label_2"</text>
+          <text>"LABEL_2"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0cbuqjx">
           <text>false</text>
@@ -59,7 +59,7 @@
       </rule>
       <rule id="DecisionRule_0piror8">
         <inputEntry id="UnaryTests_0vic7lx">
-          <text>"label_3"</text>
+          <text>"LABEL_3"</text>
         </inputEntry>
         <inputEntry id="UnaryTests_0n9psyw">
           <text>false</text>

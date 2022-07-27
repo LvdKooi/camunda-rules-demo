@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Entity
 @Setter
 @Getter
-public class CustomerLabel {
+public class CustomerTopLabel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,5 +19,5 @@ public class CustomerLabel {
     @Enumerated(EnumType.STRING)
     private Label label;
 
-    private boolean isThrottled;
+    private String outputStrategy;
 }

@@ -10,26 +10,26 @@
       <output id="Output_1" name="Top level label" typeRef="string" />
       <rule id="DecisionRule_1e6umew">
         <inputEntry id="UnaryTests_06dnrqy" expressionLanguage="feel">
-          <text>list contains(labels, "label_3")</text>
+          <text>list contains(labels, "LABEL_3")</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_14h4n7a">
-          <text>"label_3"</text>
+          <text>"LABEL_3"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_133ox92">
         <inputEntry id="UnaryTests_0pcazr3" expressionLanguage="feel">
-          <text>list contains(labels, "label_1")</text>
+          <text>list contains(labels, "LABEL_1")</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_0wtiuh6">
-          <text>"label_1"</text>
+          <text>"LABEL_1"</text>
         </outputEntry>
       </rule>
       <rule id="DecisionRule_1ur2mmq">
         <inputEntry id="UnaryTests_0btb0r2" expressionLanguage="feel">
-          <text>list contains(labels, "label_2")</text>
+          <text>list contains(labels, "LABEL_2")</text>
         </inputEntry>
         <outputEntry id="LiteralExpression_1wyzx07">
-          <text>"label_2"</text>
+          <text>"LABEL_2"</text>
         </outputEntry>
       </rule>
     </decisionTable>

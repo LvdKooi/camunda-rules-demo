@@ -4,9 +4,9 @@ import lombok.Data;
 import nl.kooi.camundarules.enums.Label;
 
 @Data
-public class CustomerLabelDto {
+public class CustomerTopLabelDto {
     private Long id;
     private Long customerId;
     private Label label;
-    private boolean isThrottled;
+    private String outputStrategy;
 }
