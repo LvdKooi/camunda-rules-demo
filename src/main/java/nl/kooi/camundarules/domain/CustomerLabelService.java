@@ -1,8 +1,8 @@
 package nl.kooi.camundarules.domain;
 
 import lombok.RequiredArgsConstructor;
-import nl.kooi.camundarules.CustomerLabel;
-import nl.kooi.camundarules.CustomerLabelRepository;
+import nl.kooi.camundarules.persistence.CustomerLabel;
+import nl.kooi.camundarules.persistence.CustomerLabelRepository;
 import nl.kooi.camundarules.enums.Label;
 import org.springframework.stereotype.Service;
 

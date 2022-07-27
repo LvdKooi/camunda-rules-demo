@@ -1,7 +1,7 @@
 package nl.kooi.camundarules.api;
 
 import lombok.RequiredArgsConstructor;
-import nl.kooi.camundarules.CustomerLabel;
+import nl.kooi.camundarules.persistence.CustomerLabel;
 import nl.kooi.camundarules.api.dto.CustomerLabelDto;
 import nl.kooi.camundarules.domain.CustomerLabelService;
 import org.springframework.web.bind.annotation.*;

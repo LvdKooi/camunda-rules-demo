@@ -1,4 +1,4 @@
-package nl.kooi.camundarules;
+package nl.kooi.camundarules.persistence;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="prioritize-1" name="Label prioritizing" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.12.0">
+  <decision id="determining_output_strategy" name="Determine output strategy">
+    <decisionTable id="DecisionTable_1ll28oa" hitPolicy="RULE ORDER">
+      <input id="Input_1" label="Label" biodi:width="191" camunda:inputVariable="label">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_06252ky" label="Throttled?" camunda:inputVariable="isThrottled">
+        <inputExpression id="LiteralExpression_1kgd4jr" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" name="Strategy" typeRef="string" biodi:width="192" />
+      <rule id="DecisionRule_0n93ioy">
+        <inputEntry id="UnaryTests_1tno755">
+          <text>"label_1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c6jqrs">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16ks19f">
+          <text>"letter"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01nw22s">
+        <inputEntry id="UnaryTests_0xjl3cu">
+          <text>"label_1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s5xnf9">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0m1kjkf">
+          <text>"whoosh"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0sjsf54">
+        <inputEntry id="UnaryTests_01jnk0s">
+          <text>"label_1"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nlmqtq">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ned1pq">
+          <text>"current_affair" </text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0eg296q">
+        <inputEntry id="UnaryTests_0btxelb">
+          <text>"label_2"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cbuqjx">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0f0jyad">
+          <text>"whoosh"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0piror8">
+        <inputEntry id="UnaryTests_0vic7lx">
+          <text>"label_3"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n9psyw">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_04dao2k">
+          <text>"letter"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1auzhib">
+        <inputEntry id="UnaryTests_09l35mr">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ljfoah">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s35d72">
+          <text>"no"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="determining_output_strategy">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
