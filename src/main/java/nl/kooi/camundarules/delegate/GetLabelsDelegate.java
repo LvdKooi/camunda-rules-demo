@@ -16,10 +16,12 @@ public class GetLabelsDelegate implements JavaDelegate {
     private final CustomerLabelService service;
 
     @Override
-    public void execute(DelegateExecution delegateExecution) throws Exception {
+    public void execute(DelegateExecution delegateExecution) {
         var customerId = delegateExecution.getVariable("customerId");
         var labels = service.getLabelsForCustomer((Long) customerId);
         var labelsAsString = labels.stream().map(Label::toString).toList();
+
+        log.info("Received labels: {} for customer: {}", labels, customerId);
 
         delegateExecution.setVariable("labels", labelsAsString);
     }

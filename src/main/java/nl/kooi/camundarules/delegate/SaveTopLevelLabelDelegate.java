@@ -24,6 +24,7 @@ public class SaveTopLevelLabelDelegate implements JavaDelegate {
         var customerId = delegateExecution.getVariable("customerId");
         var labelAsLabel = label != null ? Label.valueOf(((String) label)) : null;
 
+        log.info("Determine top level label {} for customer {}", label, customerId);
         customerTopLabelService.saveCustomerTopLabel((Long) customerId, labelAsLabel);
 
         var isThrottled = customerLabelService.isLabelThrottledForCustomer((Long) customerId, labelAsLabel);

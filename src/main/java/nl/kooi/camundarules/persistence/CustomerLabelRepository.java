@@ -12,7 +12,7 @@ public interface CustomerLabelRepository extends JpaRepository<CustomerLabel, Lo
     @Query("Select distinct customerId from CustomerLabel")
     List<Long> findAllCustomerIds();
 
-    @Query("Select distinct label from CustomerLabel")
+    @Query("Select distinct label from CustomerLabel where customerId = :customerId")
     List<Label> findLabelsByCustomerId(Long customerId);
 
     Optional<CustomerLabel> findByCustomerIdAndLabel(Long customerId, Label label);

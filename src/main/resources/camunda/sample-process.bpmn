@@ -14,7 +14,7 @@
     <bpmn:subProcess id="Activity_06nwxrf">
       <bpmn:incoming>Flow_1234h0d</bpmn:incoming>
       <bpmn:outgoing>Flow_0cwhh2g</bpmn:outgoing>
-      <bpmn:multiInstanceLoopCharacteristics camunda:collection="customerIds" camunda:elementVariable="customerId" />
+      <bpmn:multiInstanceLoopCharacteristics isSequential="true" camunda:collection="customerIds" camunda:elementVariable="customerId" />
       <bpmn:startEvent id="Event_0wp1i5n">
         <bpmn:outgoing>Flow_1kwobz6</bpmn:outgoing>
       </bpmn:startEvent>

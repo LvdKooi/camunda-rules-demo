@@ -19,6 +19,8 @@ public class SaveOutputDelegate implements JavaDelegate {
         var outputOutcome =  delegateExecution.getVariable("output_strategy").toString();
         var customerId = (Long) delegateExecution.getVariable("customerId");
 
+        log.info("Determined output strategy: {} for customer: {}", outputOutcome, customerId);
+
         customerTopLabelService
                 .addOutputStrategyToCustomerTopLabel(customerId, outputOutcome);
     }

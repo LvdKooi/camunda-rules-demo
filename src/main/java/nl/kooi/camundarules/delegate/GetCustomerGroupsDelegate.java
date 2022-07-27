@@ -20,6 +20,5 @@ public class GetCustomerGroupsDelegate implements JavaDelegate {
 
         log.info("Received {} customers.", ids.size());
         delegateExecution.setVariable("customerIds", ids);
-
     }
 }
