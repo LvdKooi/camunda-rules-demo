@@ -15,11 +15,7 @@ import java.util.List;
 public class CustomerLabelService {
     private final CustomerLabelRepository repository;
 
-    public CustomerLabel saveCustomerLabel(Long customerId, Label label, boolean isThrottled) {
-        var customerLabel = new CustomerLabel();
-        customerLabel.setCustomerId(customerId);
-        customerLabel.setLabel(label);
-        customerLabel.setThrottled(isThrottled);
+    public CustomerLabel saveCustomerLabel(CustomerLabel customerLabel) {
         return repository.save(customerLabel);
     }
 
@@ -43,7 +39,6 @@ public class CustomerLabelService {
         var customerLabel = repository.findByCustomerIdAndLabel(cutomerId, label);
 
         return customerLabel.map(CustomerLabel::isThrottled).orElse(false);
-
     }
 
     public void clearAll() {

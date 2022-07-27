@@ -34,7 +34,7 @@
       <bpmn:sequenceFlow id="Flow_0sx3ecr" sourceRef="Activity_1ojsm1w" targetRef="Activity_18ql2pk" />
       <bpmn:sequenceFlow id="Flow_0sa18ig" sourceRef="Activity_18ql2pk" targetRef="Activity_1ljw95w" />
       <bpmn:sequenceFlow id="Flow_1885f03" sourceRef="Activity_0mipgdo" targetRef="Activity_1wkpq3v" />
-      <bpmn:serviceTask id="Activity_1ojsm1w" name="Get labels for customer group" camunda:delegateExpression="#{getLabelsDelegate}">
+      <bpmn:serviceTask id="Activity_1ojsm1w" name="Get labels for customer group" camunda:asyncBefore="true" camunda:delegateExpression="#{getLabelsDelegate}">
         <bpmn:incoming>Flow_1kwobz6</bpmn:incoming>
         <bpmn:outgoing>Flow_0sx3ecr</bpmn:outgoing>
       </bpmn:serviceTask>
@@ -43,7 +43,7 @@
       </bpmn:endEvent>
       <bpmn:sequenceFlow id="Flow_0y0g1nf" sourceRef="Activity_1wkpq3v" targetRef="Event_1mbxjgt" />
       <bpmn:sequenceFlow id="Flow_0ww7ff6" sourceRef="Activity_1ljw95w" targetRef="Activity_0mipgdo" />
-      <bpmn:serviceTask id="Activity_1ljw95w" name="Save top level label" camunda:delegateExpression="#{saveTopLevelLabelDelegate}">
+      <bpmn:serviceTask id="Activity_1ljw95w" name="Save top level label" camunda:asyncBefore="true" camunda:delegateExpression="#{saveTopLevelLabelDelegate}">
         <bpmn:incoming>Flow_0sa18ig</bpmn:incoming>
         <bpmn:outgoing>Flow_0ww7ff6</bpmn:outgoing>
       </bpmn:serviceTask>

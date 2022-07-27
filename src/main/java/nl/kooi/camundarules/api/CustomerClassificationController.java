@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,12 +26,16 @@ public class CustomerClassificationController {
 
     @GetMapping("/classification-outcome")
     public List<ClassificationOutcome> getClassificationOutcomes() {
-        var labelsPerCustomerId = customerLabelService.getCustomerLabels().stream().map(Mapper::map).sorted(Comparator.comparingLong(CustomerLabelDto::getCustomerId)).collect(Collectors.groupingBy(CustomerLabelDto::getCustomerId));
-
+        var labelsPerCustomerId = customerLabelService
+                .getCustomerLabels()
+                .stream()
+                .map(Mapper::map)
+                .collect(Collectors.groupingBy(CustomerLabelDto::getCustomerId));
 
         return labelsPerCustomerId.keySet()
                 .stream()
-                .map(customerId -> new ClassificationOutcome(labelsPerCustomerId.get(customerId), Mapper.map(customerTopLabelService.getCustomerTopLabel(customerId))))
+                .map(customerId ->
+                        new ClassificationOutcome(labelsPerCustomerId.get(customerId), Mapper.map(customerTopLabelService.getCustomerTopLabel(customerId))))
                 .collect(Collectors.toList());
     }
 

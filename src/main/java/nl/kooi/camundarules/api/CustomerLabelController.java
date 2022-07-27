@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
-
-import static nl.kooi.camundarules.api.Mapper.map;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
@@ -20,12 +18,29 @@ public class CustomerLabelController {
 
     @PostMapping
     public CustomerLabelDto saveCustomerLabel(@RequestBody CustomerLabelDto dto) {
-        var customer = service.saveCustomerLabel(dto.getCustomerId(), dto.getLabel(), dto.isThrottled());
-        return map(customer);
+        return Optional.of(dto)
+                .map(Mapper::map)
+                .map(service::saveCustomerLabel)
+                .map(Mapper::map)
+                .orElseThrow();
+    }
+
+    @PostMapping("/bulk")
+    public List<CustomerLabelDto> saveCustomerLabels(@RequestBody List<CustomerLabelDto> dtoList) {
+        return dtoList.stream()
+                .map(Mapper::map)
+                .map(service::saveCustomerLabel)
+                .map(Mapper::map)
+                .toList();
     }
 
     @GetMapping
     public List<CustomerLabelDto> getCustomerLabels() {
-        return service.getCustomerLabels().stream().map(Mapper::map).sorted(Comparator.comparingLong(CustomerLabelDto::getCustomerId)).collect(Collectors.toList());
+        return service
+                .getCustomerLabels()
+                .stream()
+                .map(Mapper::map)
+                .sorted(Comparator.comparingLong(CustomerLabelDto::getCustomerId))
+                .toList();
     }
 }

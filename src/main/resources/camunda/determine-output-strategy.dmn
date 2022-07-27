@@ -7,7 +7,7 @@
           <text></text>
         </inputExpression>
       </input>
-      <input id="InputClause_06252ky" label="Throttled?" camunda:inputVariable="isThrottled">
+      <input id="InputClause_06252ky" label="Throttled" camunda:inputVariable="isThrottled">
         <inputExpression id="LiteralExpression_1kgd4jr" typeRef="boolean">
           <text></text>
         </inputExpression>

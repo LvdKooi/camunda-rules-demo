@@ -18,6 +18,15 @@ public class Mapper {
         return dto;
     }
 
+    public static CustomerLabel map(CustomerLabelDto dto) {
+        var model = new CustomerLabel();
+        model.setCustomerId(dto.getCustomerId());
+        model.setId(dto.getId());
+        model.setLabel(dto.getLabel());
+        model.setThrottled(dto.isThrottled());
+        return model;
+    }
+
     public static CustomerTopLabelDto map(CustomerTopLabel model) {
         var dto = new CustomerTopLabelDto();
         dto.setCustomerId(model.getCustomerId());
