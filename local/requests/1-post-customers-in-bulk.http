@@ -1,0 +1,35 @@
+### Step 1: POST CUSTOMERS IN BULK
+POST http://localhost:8080/customer-labels/bulk
+Content-Type: application/json
+
+[
+    {
+        "customerId": 1,
+        "label": "LABEL_1",
+        "throttled": false
+    },
+    {
+        "customerId": 1,
+        "label": "LABEL_2",
+        "throttled": false
+    },
+    {
+        "customerId": 2,
+        "label": "LABEL_3",
+        "throttled": false
+    },
+    {
+        "customerId": 2,
+        "label": "LABEL_1",
+        "throttled": false
+    },
+
+        {
+        "customerId": 3,
+        "label": "LABEL_1",
+        "throttled": true
+    }
+]
+
+
+

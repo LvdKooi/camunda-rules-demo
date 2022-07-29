@@ -1,11 +1,15 @@
 package nl.kooi.camundarules.api.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ClassificationOutcome {
-    private final List<CustomerLabelDto> input;
-    private final CustomerTopLabelDto outcome;
+    private List<CustomerLabelDto> input;
+    private CustomerTopLabelDto outcome;
 }

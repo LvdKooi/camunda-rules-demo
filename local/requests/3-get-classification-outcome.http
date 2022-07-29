@@ -1,0 +1,2 @@
+### Step 3: GET CLASSIFICATION OUTCOME
+GET http://localhost:8080/classification-outcome

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 @Component
 @Slf4j
-public class GetCustomerGroupsDelegate implements JavaDelegate {
+public class GetCustomersDelegate implements JavaDelegate {
     private final CustomerLabelService service;
 
     @Override

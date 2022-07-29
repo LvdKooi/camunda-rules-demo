@@ -4,3 +4,7 @@ camunda:
     admin-user:
       id: admin
       password: admin
+spring:
+  h2:
+    console:
+      enabled: true
