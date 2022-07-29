@@ -14,7 +14,7 @@ public class GetCustomersDelegate implements JavaDelegate {
     private final CustomerLabelService service;
 
     @Override
-    public void execute(DelegateExecution delegateExecution) throws Exception {
+    public void execute(DelegateExecution delegateExecution) {
 
         var ids = service.getCustomerIds();
 

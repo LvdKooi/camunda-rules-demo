@@ -97,7 +97,7 @@ class CustomerClassificationIntegrationTests {
 
     @Test
     @DisplayName("Multiple customers are handled and prioritized according to their own labels.")
-    void testProcess_label3IsPrioritizedOverLabel1() {
+    void testProcess_multipleCustomers() {
         //        given (customer 1 with label 1 and 3, customer 2 with label 1 and 2)
         givenThereIsACustomerWith(1, Label.LABEL_1, false);
         andThereIsACustomerWith(1, Label.LABEL_3, false);
@@ -116,7 +116,7 @@ class CustomerClassificationIntegrationTests {
 
     @Test
     @DisplayName("When a customer has label 1 and 3, then label 3 is prioritized and output strategy is selected accordingly.")
-    void testProcess_multipleCustomer_arePrioritizedBasedOnTheirOwnLabels() {
+    void testProcess_label3IsPrioritizedOverLabel1() {
         //        given
         givenThereIsACustomerWith(1, Label.LABEL_1, false);
         andThereIsACustomerWith(1, Label.LABEL_3, false);
@@ -127,7 +127,6 @@ class CustomerClassificationIntegrationTests {
 
         //        then
         thenTheOutcomeContainsCustomerWithLabelAndStrategy(1, Label.LABEL_3, "[letter]");
-
     }
 
     @Test
@@ -196,7 +195,6 @@ class CustomerClassificationIntegrationTests {
     }
 
     void thenTheOutcomeContainsCustomerWithLabelAndStrategy(long customerId, Label label, String strategy) {
-        System.out.println(outcomeList);
         var isPresent = outcomeList.stream()
                 .map(ClassificationOutcome::getOutcome)
                 .filter(outcome -> outcome.getCustomerId().equals(customerId))
