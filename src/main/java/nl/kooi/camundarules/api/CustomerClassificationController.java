@@ -36,7 +36,7 @@ public class CustomerClassificationController {
                 .stream()
                 .map(customerId ->
                         new ClassificationOutcome(labelsPerCustomerId.get(customerId), Mapper.map(customerTopLabelService.getCustomerTopLabel(customerId))))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @PostMapping("/classification-outcome/clear-all")

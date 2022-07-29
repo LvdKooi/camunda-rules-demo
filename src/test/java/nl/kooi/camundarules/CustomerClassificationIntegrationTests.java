@@ -73,7 +73,7 @@ class CustomerClassificationIntegrationTests {
         givenThereIsACustomerWith(1, Label.LABEL_2, false);
 
         //        when
-        whenIStartTheClassificationProcess();
+        whenImStartingTheClassificationProcess();
         andImRetrievingTheClassificationOutcome();
 
         //        then
@@ -88,7 +88,7 @@ class CustomerClassificationIntegrationTests {
         andThereIsACustomerWith(1, Label.LABEL_2, false);
 
         //        when
-        whenIStartTheClassificationProcess();
+        whenImStartingTheClassificationProcess();
         andImRetrievingTheClassificationOutcome();
 
         //        then
@@ -106,7 +106,7 @@ class CustomerClassificationIntegrationTests {
         andThereIsACustomerWith(2, Label.LABEL_2, false);
 
         //        when
-        whenIStartTheClassificationProcess();
+        whenImStartingTheClassificationProcess();
         andImRetrievingTheClassificationOutcome();
 
         //        then
@@ -122,7 +122,7 @@ class CustomerClassificationIntegrationTests {
         andThereIsACustomerWith(1, Label.LABEL_3, false);
 
         //        when
-        whenIStartTheClassificationProcess();
+        whenImStartingTheClassificationProcess();
         andImRetrievingTheClassificationOutcome();
 
         //        then
@@ -137,7 +137,7 @@ class CustomerClassificationIntegrationTests {
         givenThereIsACustomerWith(1, Label.LABEL_1, true);
 
         //        when
-        whenIStartTheClassificationProcess();
+        whenImStartingTheClassificationProcess();
         andImRetrievingTheClassificationOutcome();
 
         //        then
@@ -178,7 +178,7 @@ class CustomerClassificationIntegrationTests {
     }
 
     @SneakyThrows
-    void whenIStartTheClassificationProcess() {
+    void whenImStartingTheClassificationProcess() {
         currentProcessId = camundaRuntime.startProcessInstanceByKey("classification_process").getProcessInstanceId();
         var query = camundaRuntime.createProcessInstanceQuery().processInstanceId(currentProcessId);
         var maxInstant = Instant.now().plusSeconds(10);
