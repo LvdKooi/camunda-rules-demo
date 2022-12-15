@@ -181,12 +181,18 @@ class CustomerClassificationIntegrationTests {
         currentProcessId = camundaRuntime.startProcessInstanceByKey("classification_process").getProcessInstanceId();
         var query = camundaRuntime.createProcessInstanceQuery().processInstanceId(currentProcessId);
         var maxInstant = Instant.now().plusSeconds(10);
+        var nextTry = Instant.now().plusSeconds(1);
+        var processInstance = query.active().singleResult();
 
         do {
-            log.info("Checking if process with id {} has ended.", currentProcessId);
+            if (nextTry.isBefore(Instant.now())) {
+                log.info("Checking if process with id {} has ended.", currentProcessId);
+                processInstance = query.active().singleResult();
+                nextTry = Instant.now().plusSeconds(1);
+            }
+
         }
-        while (query.active().singleResult() != null &&
-                Instant.now().isBefore(maxInstant));
+        while (processInstance != null && Instant.now().isBefore(maxInstant));
 
 
         if (query.active().singleResult() != null) {
