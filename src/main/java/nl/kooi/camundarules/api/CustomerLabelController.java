@@ -25,6 +25,11 @@ public class CustomerLabelController {
                 .orElseThrow();
     }
 
+    @PostMapping("/a-lot")
+    public void saveCustomerLabels() {
+        service.saveAmountOfCustomerLabels(1000000);
+    }
+
     @PostMapping("/bulk")
     public List<CustomerLabelDto> saveCustomerLabels(@RequestBody List<CustomerLabelDto> dtoList) {
         return dtoList.stream()

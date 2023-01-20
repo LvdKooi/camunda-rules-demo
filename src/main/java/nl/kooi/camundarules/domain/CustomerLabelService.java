@@ -4,10 +4,12 @@ import lombok.RequiredArgsConstructor;
 import nl.kooi.camundarules.enums.Label;
 import nl.kooi.camundarules.persistence.CustomerLabel;
 import nl.kooi.camundarules.persistence.CustomerLabelRepository;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 @Service
 @RequiredArgsConstructor
@@ -17,6 +19,22 @@ public class CustomerLabelService {
 
     public CustomerLabel saveCustomerLabel(CustomerLabel customerLabel) {
         return repository.save(customerLabel);
+    }
+
+    @Async
+    public void saveAmountOfCustomerLabels(int number) {
+        IntStream.rangeClosed(1, number)
+                .mapToObj(this::createCustomerLabel)
+                .forEach(repository::save);
+    }
+
+    private CustomerLabel createCustomerLabel(int i) {
+        System.out.println(i);
+        var label = new CustomerLabel();
+        label.setLabel(Label.LABEL_3);
+        label.setThrottled(true);
+        label.setCustomerId((long) i);
+        return label;
     }
 
     @Transactional(readOnly = true)
