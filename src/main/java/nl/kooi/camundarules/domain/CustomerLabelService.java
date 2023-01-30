@@ -24,6 +24,7 @@ public class CustomerLabelService {
     @Async
     public void saveAmountOfCustomerLabels(int number) {
         IntStream.rangeClosed(1, number)
+                .parallel()
                 .mapToObj(this::createCustomerLabel)
                 .forEach(repository::save);
     }

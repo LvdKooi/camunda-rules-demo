@@ -27,7 +27,7 @@ public class CustomerLabelController {
 
     @PostMapping("/a-lot")
     public void saveCustomerLabels() {
-        service.saveAmountOfCustomerLabels(1000000);
+        service.saveAmountOfCustomerLabels(400000);
     }
 
     @PostMapping("/bulk")
