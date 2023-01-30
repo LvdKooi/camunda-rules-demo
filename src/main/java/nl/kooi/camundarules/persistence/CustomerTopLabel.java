@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import nl.kooi.camundarules.enums.Label;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Setter
